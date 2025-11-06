@@ -6,7 +6,7 @@
 /*   By: azirari <azirari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 21:23:06 by azirari           #+#    #+#             */
-/*   Updated: 2025/11/03 17:15:56 by azirari          ###   ########.fr       */
+/*   Updated: 2025/11/06 16:46:55 by azirari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,13 @@ int	ft_printf(const char *str, ...)
 			count += check(args, *str);
 			str++;
 		}
-		if (*str == '\0')
+		else if (!*str)
 			return (count);
 		else
+		{
 			count += ft_putchar_fd(*str, 1);
-		str++;
+			str++;
+		}
 	}
 	va_end(args);
 	return (count);
